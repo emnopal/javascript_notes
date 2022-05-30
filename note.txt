@@ -1,0 +1,47 @@
+inisialisasi project nodejs: npm init
+run jsvascript nodejs: npm <nama_project>.js
+object scripts pada package.json, contoh:
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+script tersebut akan manggil beberapa object yg ada di dalamnya
+Object scripts merupakan objek yang mengandung kumpulan script di dalamnya. Script tersebut dapat dijalankan kapan saja pada proyek kita
+npm run test <- buat jalanin object test di object scripts,
+atau npm run <nama_script> <- buat jalanin object <nama_script> di object scripts
+kita bisa customisasi script sesuai keinginan kita, kita bisa tambahkan script start untuk start project spt berikut:
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+nanti ketika npm run start dijalankan maka akan jalankan script node index.js
+npm install -h buat liat command install
+
+command npm:
+
+npm init
+Membuat berkas package.json pada project
+[--force|-f|--yes|-y|--scope]
+
+npm install <package-name>
+npm install <package-name> --save-dev // dev dependencies
+// alias
+npm install, npm i ,npm in ,npm ins ,npm isntal ,npm add
+Memasang dan mendaftarkan package pada berkas package.json
+[-P|--save-prod|-D|--save-dev|-O|--save-optional] [-E|--save-exact] [-B|--save-bundle] [--no-save] [--dry-run]
+
+npm run-script <command>
+npm run <command>
+Menjalankan perintah yang terdapat pada objek scripts di berkas package.json
+[--silent] [-- <args>...]
+
+npm uninstall <package-name>
+npm uninstall <package-name> --save-dev // dev dependencies
+Menghapus dan mengeluarkan package dari berkas package.json
+[-S|--save|-D|--save-dev|-O|--save-optional|--no-save]
+
+
+npm version
+Untuk melihat versi package yang tersedia secara global atau lokal
+[<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease [--preid=<prerelease-id>] | from-git]
+
+import variableName from 'package-name';
