@@ -82,19 +82,35 @@ catch (ENOENT) { // catch file not found
 *
 * */
 
+// this is async code
 const readableStream = fs.createReadStream('./artikel.txt', {
     highWaterMark: 10 // will be streamed in every 10 character
 });
 
-readableStream.on('readable', () => {
+readableStream.on('readable', () => { // create event readable then trigger write to console
     try {
-        process.stdout.write(`[${readableStream.read()}]`);
+        process.stdout.write(`[${readableStream.read()}]`); // write stream into logs
     } catch(ENOENT) {
         // catch the error when the chunk cannot be read.
     }
 });
 
-readableStream.on('end', () => {
+readableStream.on('end', () => { // if readStream is end, it will trigger Done
     console.log('Done');
 });
+
+// writableStream
+// CAUTION: this will replace existing file
+
+const writableStream = fs.createWriteStream('output.txt');
+
+writableStream.write('Ini merupakan teks baris pertama!\n');
+writableStream.write('Ini merupakan teks baris kedua!\n');
+writableStream.end('Akhir dari writable stream!');
+// writableStream.end(); // or this!
+
+// this is also async code
+fs.readFile('output.txt', 'UTF-8', fileReadCallback);
+
+
 
