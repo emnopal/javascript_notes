@@ -6,7 +6,7 @@ const input = `${absPath}/input.txt`
 const output = `${absPath}/output.txt`
 
 const readableStream = fs.createReadStream(input, {
-    highWaterMark: 15
+    highWaterMark: 15 // set chunk to 15, it means every 15 character it will splitted
 });
 
 const writableStream = fs.createWriteStream(output);
