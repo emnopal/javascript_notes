@@ -1,4 +1,4 @@
-const RequestResponseHelper = require('./helper/RequestResponseHelper');
+const RequestResponseHelper = require('../helper/RequestResponseHelper');
 
 const requestListener = (request, response) => {
 
