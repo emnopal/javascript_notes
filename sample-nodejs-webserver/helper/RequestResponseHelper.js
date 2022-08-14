@@ -6,6 +6,7 @@ class RequestResponseHelper {
     }
 
     setHeader(name, value){
+        // adding or setting header
         this.response.setHeader(name, value);
     }
 
@@ -20,7 +21,7 @@ class RequestResponseHelper {
         };
 
         this.response.end(
-            JSON.stringify(parseData) // stringify json
+            JSON.stringify(parseData) // stringify json, needed to change object to string
         );
     }
 
