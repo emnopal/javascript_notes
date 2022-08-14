@@ -1,4 +1,4 @@
-const httpHandler = (request, response) => { // avoid to use class in javascript
+const httpHandler = (request, response) => {
 
     const handlingResponse = (statusCode, message, data) => {
         response.statusCode = statusCode;
